@@ -4,33 +4,6 @@ local function dot(code)
 	return pandoc.pipe(dot_path, {"-Tsvg"}, code)
 end
 
-function Meta(meta)
-	local title = ""
-	for k, v in pairs(meta.title) do
-		if v.text ~= nil then
-			title = title .. v.text
-		else
-			title = title .. " "
-		end
-	end
-	local author = {}
-	for i, a in pairs(meta.author) do
-		author[i] = ""
-		for k, v in pairs(a) do
-			if v.text ~= nil then
-				author[i] = author[i] .. v.text
-			else
-				author[i] = author[i] .. " "
-			end
-		end
-		author[i] = pandoc.MetaString(author[i])
-	end
-	meta["og:type"] = pandoc.MetaString("article")
-	meta["og:title"] = pandoc.MetaString(title)
-	meta["og:author"] = pandoc.MetaList(author)
-	return meta
-end
-
 local figcount = 1
 
 function Para(content)

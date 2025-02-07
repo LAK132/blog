@@ -28,9 +28,10 @@ do_dir() {
 			--metadata=link-citations:true \
 			--csl=$root_dir/acm-sigchi-proceedings.csl \
 			--lua-filter=$root_dir/filter.lua \
-			--resource-path=.:$root_dir:$build_dir:$out_dir \
+			--resource-path=.:$build_dir:$out_dir \
 			--output=$build_dir/index.htex \
 			--css=style.css \
+			--include-in-header=meta.html \
 			$( [ -f bibliography.bib ] && echo --bibliography=bibliography.bib ) \
 			main.tex && \
 		cd $out_dir && \
