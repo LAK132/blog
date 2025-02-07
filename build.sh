@@ -20,6 +20,15 @@ do_dir() {
 		pandoc \
 			--from=latex \
 			--to=html \
+			--lua-filter=$root_dir/filter.lua \
+			--template=$root_dir/meta.html \
+			--standalone \
+			--gladtex \
+			--output=$build_dir/meta.html \
+			main.tex && \
+		pandoc \
+			--from=latex \
+			--to=html \
 			--standalone \
 			--number-sections \
 			$( [ "$1" != "." ] && echo --table-of-contents ) \
@@ -31,7 +40,7 @@ do_dir() {
 			--resource-path=.:$build_dir:$out_dir \
 			--output=$build_dir/index.htex \
 			--css=style.css \
-			--include-in-header=meta.html \
+			--include-in-header=$build_dir/meta.html \
 			$( [ -f bibliography.bib ] && echo --bibliography=bibliography.bib ) \
 			main.tex && \
 		cd $out_dir && \

@@ -10,16 +10,62 @@
 \author{LAK132}
 
 \begin{document}
+\begin{lstlisting}[language=page-meta]
+{["prefix"]="posts/tppi/",["description"]="test post please ignore",["image"]="resources/DSC_0363_edited.jpg"}
+\end{lstlisting}
 
 \maketitle
 
 \include{preview}
+
+\section{Image}
 
 \begin{figure}
 	\caption{IR Nikon D1, 35mm f/1.8 G, 1/500s f/5.6}
 	\includegraphics{resources/DSC_0363_edited.jpg}
 \end{figure}
 
+\section{Code}
+
 \codesample{tex}{main.tex}
+
+\section{Math}
+
+\subsection{2D}
+
+\begin{equation}\begin{split}
+  a \wedge b
+  &= \left( a_1 e_1 + a_2 e_2 \right)
+  \wedge \left( b_1 e_1 + b_2 e_2 \right) \\
+  &= \begin{vmatrix}
+  a_1 & b_1 \\
+  a_2 & b_2
+  \end{vmatrix} \left( e_1 \wedge e_2 \right)
+\end{split}\end{equation}
+
+\subsection{3D}
+
+\begin{equation}\begin{split}
+  a \wedge b
+  &= \left( a_1 e_1 + a_2 e_2 + a_3 e_3 \right)
+  \wedge \left( b_1 e_1 + b_2 e_2 + b_3 e_3 \right) \\
+  &= \begin{vmatrix}
+  a_1 & b_1 \\
+  a_2 & b_2
+  \end{vmatrix} \left( e_1 \wedge e_2 \right)
+  + \begin{vmatrix}
+  a_2 & b_2 \\
+  a_3 & b_3
+  \end{vmatrix} \left( e_2 \wedge e_3 \right)
+  + \begin{vmatrix}
+  a_3 & b_3 \\
+  a_1 & b_1
+  \end{vmatrix} \left( e_3 \wedge e_1 \right) \\
+  &= \begin{vmatrix}
+  a_1 & b_1 & e_{23} \\
+  a_2 & b_2 & e_{31} \\
+  a_3 & b_3 & e_{12}
+  \end{vmatrix}
+\end{split}\end{equation}
 
 \end{document}

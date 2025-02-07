@@ -1,4 +1,24 @@
 <meta property="og:type" content="article" />
-<meta property="og:title" content="blog" />
-<meta property="og:author" content="LAK132" />
-<meta property="og:url" content="https://lak132.github.io/blog/" />
+$if(title)$
+<meta property="og:title" content="$title$" />
+$endif$
+$if(description)$
+<meta property="og:description" content="$description$" />
+$endif$
+$for(author)$
+<meta property="og:author" content="$author$" />
+$endfor$
+$if(image)$
+<meta property="og:image" content="https://lak132.github.io/blog/$prefix$$image$">
+$endif$
+<meta property="og:url" content="https://lak132.github.io/blog/$prefix$" />
+<meta name="twitter:card" content="summary_large_image">
+$if(title)$
+<meta name="twitter:title" content="$title$" />
+$endif$
+$if(description)$
+<meta name="twitter:description" content="$description$" />
+$endif$
+$if(image)$
+<meta name="twitter:image" content="https://lak132.github.io/blog/$prefix$$image$">
+$endif$

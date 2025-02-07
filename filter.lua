@@ -4,6 +4,17 @@ local function dot(code)
 	return pandoc.pipe(dot_path, {"-Tsvg"}, code)
 end
 
+local meta_block = nil
+
+function Pandoc(content)
+	if meta_block ~= nil then
+		for k, v in pairs(meta_block) do
+			content.meta[k] = pandoc.MetaInlines(v)
+		end
+	end
+	return content
+end
+
 local figcount = 1
 
 function Para(content)
@@ -25,7 +36,10 @@ local function figure_block(content, label, caption)
 end
 
 function CodeBlock(block, attr)
-	if block.classes[1] == "dot-image" then
+	if block.attributes.language == "page-meta" then
+		meta_block = assert(load("return " .. block.text))()
+		return {}
+	elseif block.attributes.language == "dot-image" then
 		local success, img = pcall(dot, block.text)
 
 		if not success then
