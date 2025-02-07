@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{listings} % For \lstset and \lstinputlisting.
+\usepackage{hyperref} % For \url and \href
+
+\newcommand{\codesample}[3][\footnotesize]{
+\lstset{basicstyle=#1\ttfamily,
+				language=#2}
+\lstinputlisting{#3}}
+
+\newcommand{\post}[1]{
+\section*{\href{posts/#1/index.html}{\input{posts/#1/title}}}
+% technically this should be use \IfFileExists however that doesn't work with
+% pandoc for some reason
+\include{posts/#1/preview}}
+
+% ----
+
+\title{blog}
+\author{LAK132}
+\pagecolor{black}
+
+\begin{document}
+
+\maketitle
+
+\post{tppi}
+
+\end{document}

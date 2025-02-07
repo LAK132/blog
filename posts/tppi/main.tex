@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{listings} % For \lstset and \lstinputlisting.
+
+\newcommand{\codesample}[3][\footnotesize]{
+\lstset{basicstyle=#1\ttfamily,
+				language=#2}
+\lstinputlisting{#3}}
+
+\title{\input{title}}
+\author{LAK132}
+
+\begin{document}
+
+\maketitle
+
+\include{preview}
+
+\begin{figure}
+	\caption{IR Nikon D1, 35mm f/1.8 G, 1/500s f/5.6}
+	\includegraphics{resources/DSC_0363_edited.jpg}
+\end{figure}
+
+\codesample{tex}{main.tex}
+
+\end{document}

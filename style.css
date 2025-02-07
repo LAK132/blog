@@ -1,0 +1,49 @@
+html {
+  justify-content: center;
+  display: flex;
+  background-color: #202020;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #ffffff;
+  max-width: 60em;
+  padding: 1em;
+}
+
+table, th, td {
+  border: 1px solid;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  text-indent: 0em;
+}
+
+h1, h2, h3, h4 {
+  font-family: serif;
+}
+
+#title-block-header {
+  text-align: center;
+}
+
+.title {
+  font-size: 300%;
+}
+
+.author {
+  font-style: italic;
+}
+
+.citation {
+  vertical-align: super;
+  font-size: 0.83em;
+}
+
+#refs p {
+  text-indent: 0 !important;
+}
