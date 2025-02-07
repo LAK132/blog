@@ -6,6 +6,8 @@ rm -rf output
 mkdir -p output
 
 do_dir() {
+	echo processing $1
+
 	mkdir -p build/$1
 
 	mkdir -p output/$1
@@ -48,7 +50,7 @@ do_dir() {
 			-d math \
 			-o index.html \
 			-u "" \
-			$build_dir/index.htex 2> /dev/null
+			$build_dir/index.htex
 		)
 	)
 	# gladtex seems to be running into an issue with python
