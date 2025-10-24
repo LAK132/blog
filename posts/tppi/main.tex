@@ -7,6 +7,8 @@
 
 \begin{document}
 
+links\cite{twitter}\cite{bsky}\cite{wafrn}\cite{instagram}\cite{github}
+
 \begin{lstlisting}[language=page-meta]
 {["prefix"]="posts/tppi/",
  ["description"]="test post please ignore",
@@ -24,7 +26,27 @@
 	\includegraphics{\postpath resources/DSC_0363_edited.jpg}
 \end{figure}
 
+\begin{figure}
+	\caption{The sky}
+	\label{fig:sky}
+	\includegraphics[width=10cm]{resources/IMG_2479.JPG}
+\end{figure}
+Figure \ref{fig:sky} shows the evening sky in the Northern Territory, Australia.
+
 \section{Code}
+
+\begin{lstlisting}[language=cpp]
+	int main() {
+		return EXIT_FAILURE;
+	}
+\end{lstlisting}
+
+\begin{lstlisting}[label={fig:cpp}, caption={A C++ snippet.}, language=cpp]
+	int main() {
+		return EXIT_FAILURE;
+	}
+\end{lstlisting}
+Figure \ref{fig:cpp} shows a C++ code snippet.
 
 \codesample{tex}{main.tex}
 
@@ -80,5 +102,12 @@
   a_3 & b_3 & e_{12}
   \end{vmatrix}
 \end{split}\end{equation}
+
+\newpage
+
+\section[references]{References}
+
+\bibliography{bibliography}
+\bibliographystyle{ieeetr}
 
 \end{document}
