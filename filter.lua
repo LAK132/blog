@@ -6,12 +6,35 @@ end
 
 local meta_block = nil
 
+function truncate_metainlines(block, max_len)
+	if block == nil then
+		return nil
+	end
+	local str = nil
+	for k, v in pairs(block) do
+		if v.text ~= nil then
+			if str == nil then
+				str = v.text
+			elseif string.len(str .. " " .. v.text) <= max_len then
+				str = str .. " " .. v.text
+			else
+				break
+			end
+		end
+	end
+	str = string.sub(str, 0, math.min(max_len, string.len(str)))
+	return pandoc.MetaInlines(str)
+end
+
 function Pandoc(content)
 	if meta_block ~= nil then
 		for k, v in pairs(meta_block) do
 			content.meta[k] = pandoc.MetaInlines(v)
 		end
 	end
+
+	content.meta["trunc-title"] = truncate_metainlines(content.meta["title"], 70)
+
 	return content
 end
 
