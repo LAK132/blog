@@ -1,0 +1,53 @@
+\documentclass{article}
+\input{../../preamble}
+
+\title{\input{title}}
+\subtitle{2022-09-23 (last edited 2025-10-29)}
+\author{LAK132}
+
+\begin{document}
+
+\begin{lstlisting}[language=page-meta]
+{["prefix"]="posts/thinkpad-dock-repair/",
+ ["image"]="resources/IMG_6047.JPG"}
+\end{lstlisting}
+
+\maketitle
+
+\include{preview}
+
+As far as I can tell, this part was probably never going to last long,
+given how much force it was under and the fact it was made from soft plastic.
+At this point I had 2 options, I either repair the broken part,
+or try and bypass the mechanism all together.
+My initial attempt to repair the part didn't end well,
+the super glue I used didn't want to stick to the plastic.
+However, it turns out that this mechanism can be safely removed all together,
+so long as the latch release mechanism is jammed:
+
+\begin{figure}
+	\caption{}
+	\includegraphics{\postpath resources/IMG_6041.JPG}
+\end{figure}
+
+\begin{figure}
+	\caption{Top plate with latch reset/lowering mechanism removed}
+	\includegraphics{\postpath resources/IMG_6044.JPG}
+\end{figure}
+
+\begin{figure}
+	\caption{Latch reset mechanism jammed with hot glue}
+	\includegraphics{\postpath resources/IMG_6047.JPG}
+\end{figure}
+
+With it reassembled with the top plate mechanism removed and the latch reset
+mechanism jammed with hot glue, the top plate will now lower all the way:
+
+\begin{figure}
+	\caption{}
+	\includegraphics{\postpath resources/IMG_6049.JPG}
+\end{figure}
+
+And the X220 will happily latch on!
+
+\end{document}

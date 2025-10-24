@@ -1,29 +1,29 @@
 \documentclass{article}
-\usepackage{listings} % For \lstset and \lstinputlisting.
-\usepackage{hyperref} % For \url and \href
-
-\newcommand{\codesample}[3][\footnotesize]{
-\lstset{basicstyle=#1\ttfamily,
-				language=#2}
-\lstinputlisting{#3}}
+\input{preamble}
 
 \newcommand{\post}[1]{
-\section*{\href{posts/#1/index.html}{\input{posts/#1/title}}}
+\def\postpath{posts/#1/}
+\section*{\href{\postpath index.html}{\input{\postpath title}}}
 % technically this should be use \IfFileExists however that doesn't work with
 % pandoc for some reason
-\include{posts/#1/preview}}
+\include{\postpath preview}}
 
 % ----
 
 \title{blog}
+\subtitle{2025-10-24}
 \author{LAK132}
 
 \begin{document}
+% more metadata for meta.html template
 \begin{lstlisting}[language=page-meta]
-{["prefix"]="",["description"]=""}
+{["prefix"]="",
+ ["description"]="A blog by LAK132"}
 \end{lstlisting}
 
 \maketitle
+
+\post{thinkpad-dock-repair}
 
 \post{tppi}
 

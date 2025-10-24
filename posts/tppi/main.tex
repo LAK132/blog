@@ -1,17 +1,16 @@
 \documentclass{article}
-\usepackage{listings} % For \lstset and \lstinputlisting.
-
-\newcommand{\codesample}[3][\footnotesize]{
-\lstset{basicstyle=#1\ttfamily,
-				language=#2}
-\lstinputlisting{#3}}
+\input{../../preamble}
 
 \title{\input{title}}
+\subtitle{2022-09-23 (last edited 2025-10-29)}
 \author{LAK132}
 
 \begin{document}
+
 \begin{lstlisting}[language=page-meta]
-{["prefix"]="posts/tppi/",["description"]="test post please ignore",["image"]="resources/DSC_0363_edited.jpg"}
+{["prefix"]="posts/tppi/",
+ ["description"]="test post please ignore",
+ ["image"]="resources/DSC_0363_edited.jpg"}
 \end{lstlisting}
 
 \maketitle
@@ -22,7 +21,7 @@
 
 \begin{figure}
 	\caption{IR Nikon D1, 35mm f/1.8 G, 1/500s f/5.6}
-	\includegraphics{resources/DSC_0363_edited.jpg}
+	\includegraphics{\postpath resources/DSC_0363_edited.jpg}
 \end{figure}
 
 \section{Code}

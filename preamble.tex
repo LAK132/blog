@@ -1,0 +1,10 @@
+\usepackage{listings} % For \lstset and \lstinputlisting.
+\usepackage{hyperref} % For \url and \href
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts}
+
+\newcommand{\codesample}[3][\footnotesize]{
+\lstset{basicstyle=#1\ttfamily,language=#2}
+\lstinputlisting{#3}}
+
+\def\postpath{}
