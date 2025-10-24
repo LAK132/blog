@@ -33,7 +33,9 @@ function Pandoc(content)
 		end
 	end
 
-	content.meta["trunc-title"] = truncate_metainlines(content.meta["title"], 70)
+	if content.meta["short-title"] == nil then
+		content.meta["short-title"] = truncate_metainlines(content.meta["title"], 70)
+	end
 
 	return content
 end
