@@ -48,21 +48,25 @@ do_dir() {
 			--to=html \
 			--standalone \
 			--number-sections \
-			$( [ "$1" != "." ] && echo --table-of-contents ) \
 			--listings \
 			--gladtex \
-			--metadata=link-citations:true \
-			$( [ "$1" != "." ] && echo --metadata=prefix:"posts/$1" ) \
-			$( [ "$1" == "." ] && echo --metadata=prefix:"" ) \
+			$( [ -f bibliography.bib ] && echo \
+				--citeproc \
+				--metadata=link-citations:true \
+				--csl=$root_dir/acm-sigchi-proceedings.csl \
+				--bibliography=bibliography.bib ) \
+			$( [ "$1" != "." ] && echo \
+				--table-of-contents \
+				--metadata=prefix:"posts/$1" ) \
+			$( [ "$1" == "." ] && echo \
+				--metadata=prefix:"" ) \
 			--metadata-file=$root_dir/config.md \
-			--csl=$root_dir/acm-sigchi-proceedings.csl \
 			--lua-filter=$root_dir/filter.lua \
 			--resource-path=.:$build_dir:$out_dir \
 			--output=$build_dir/index.htex \
 			--css=style.css \
 			--include-in-header=$build_dir/meta.html \
 			--include-before-body=$build_dir/header.html \
-			$( [ -f bibliography.bib ] && echo --bibliography=bibliography.bib ) \
 			$build_dir/preamble.tex main.tex && \
 		cd $out_dir && \
 		( gladtex \
