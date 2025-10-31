@@ -1,0 +1,71 @@
+\documentclass{article}
+\input{../../preamble.tex}
+
+\title{\input{title}}
+\subtitle{(Draft 2025-10-31)}
+\author{LAK132}
+
+\begin{document}
+
+\begin{lstlisting}[language=page-meta]
+{["prefix"]="posts/thinkpad-dock-repair/",
+ ["short-title"]="Repairing a ThinkPad Dock",
+ ["image"]="resources/IMG_6047.JPG"}
+\end{lstlisting}
+
+\maketitle
+
+A while ago I bought a second hand Dell Precision 7520 in order to investigate
+a GPU driver crash we were running into at work.
+Not only did this laptop reproduce the issue perfectly, it just to happens
+that it did so because the original NVIDIA M1200 GPU in it was completely
+fried.
+I eventually opted to replace it with an NVIDIA M2200 and it has worked
+flawlessly since (thanks MXM!).
+
+Much like my various ThinkPads, this Dell has one particularly cool feature:
+a docking port!
+So of course, I just had to get my hands on one (a PR03X in particular)
+
+As of writing this I have decided I'd like to be able to use this laptop for
+streaming, and have gone as far as setting up an entire desk just for the task.
+Unfortunately the desk is quite small, and this Dell Precision is quite large,
+so I went looking to see what options were available for mounting laptops to
+monitor arms.
+It was during this research that I came across something that caught my eye:
+
+\include{preview}
+
+As it just so happens, I was right!
+
+\begin{figure}
+	\includegraphics{\postpath resources/20251020_150915319.JPG}
+	\caption{The E-View top plate attaches to my monitor arm perfectly!}
+\end{figure}
+
+There's just one problem, the Precision 7520 doesn't fit!
+
+\begin{figure}
+	\includegraphics{\postpath resources/DSC07341.JPG}
+	\caption{I know it wasn't listed as a supported laptop, but c'mon, it said
+					 it supported up to 17" laptops!}
+\end{figure}
+
+The issue likely lies in the fact that this laptop is a later generation of
+E-Port compatibles, particularly the battery has been moved to the front of
+the laptop and the E-Port connector moved all the way to the back.
+In order to compensate for this, you can get a spacer that clips into the dock
+to better align the laptop with the dock.
+
+\begin{figure}
+	\includegraphics[width=27em]{\postpath resources/DSC07344.JPG}
+	\includegraphics[width=27em]{\postpath resources/DSC07346.JPG}
+	\caption{PR03X with and without the spacer}
+\end{figure}
+
+Nevertheless, this means some modifications are going to need to be made in
+order to make use of this stand plate as a monitor arm mount for my laptop.
+
+
+
+\end{document}
