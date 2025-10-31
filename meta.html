@@ -1,4 +1,4 @@
-<link rel="icon" type="image/x-icon" href="https://lak132.github.io/blog/favicon.ico">
+<link rel="icon" type="image/x-icon" href="$web-root$favicon.ico">
 <meta property="og:type" content="article" />
 $if(short-title)$
 <meta property="og:title" content="$short-title$" />
@@ -10,9 +10,9 @@ $for(author)$
 <meta property="og:author" content="$author$" />
 $endfor$
 $if(image)$
-<meta property="og:image" content="https://lak132.github.io/blog/$prefix$$image$" />
+<meta property="og:image" content="$web-root$$prefix$$image$" />
 $endif$
-<meta property="og:url" content="https://lak132.github.io/blog/$prefix$" />
+<meta property="og:url" content="$web-root$$prefix$" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@LAK132" />
 <meta name="twitter:creator" content="@LAK132" />
@@ -23,5 +23,5 @@ $if(description)$
 <meta name="twitter:description" content="$description$" />
 $endif$
 $if(image)$
-<meta name="twitter:image" content="https://lak132.github.io/blog/$prefix$$image$" />
+<meta name="twitter:image" content="$web-root$$prefix$$image$" />
 $endif$
