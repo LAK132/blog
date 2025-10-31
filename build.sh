@@ -60,3 +60,4 @@ do_dir .
 for post in posts/*/; do
 	mkdir -p build/$post && do_dir ${post%*/}
 done
+cp favicon.ico output/favicon.ico
