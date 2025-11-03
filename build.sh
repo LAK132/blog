@@ -22,6 +22,8 @@ do_dir() {
 		pandoc \
 			--template=$root_dir/preamble.tex \
 			--output=$build_dir/preamble.tex \
+			$( [ "$1" != "." ] && echo --metadata=prefix:"posts/$1" ) \
+			$( [ "$1" == "." ] && echo --metadata=prefix:"" ) \
 			$root_dir/config.md && \
 		pandoc \
 			--from=latex \
@@ -30,6 +32,8 @@ do_dir() {
 			--template=$root_dir/meta.html \
 			--standalone \
 			--gladtex \
+			$( [ "$1" != "." ] && echo --metadata=prefix:"posts/$1" ) \
+			$( [ "$1" == "." ] && echo --metadata=prefix:"" ) \
 			--metadata-file=$root_dir/config.md \
 			--output=$build_dir/meta.html \
 			main.tex && \
@@ -40,6 +44,8 @@ do_dir() {
 			--template=$root_dir/header.html \
 			--standalone \
 			--gladtex \
+			$( [ "$1" != "." ] && echo --metadata=prefix:"posts/$1" ) \
+			$( [ "$1" == "." ] && echo --metadata=prefix:"" ) \
 			--metadata-file=$root_dir/config.md \
 			--output=$build_dir/header.html \
 			main.tex && \
