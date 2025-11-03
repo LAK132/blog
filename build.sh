@@ -22,7 +22,7 @@ do_dir() {
 		pandoc \
 			--template=$root_dir/preamble.tex \
 			--output=$build_dir/preamble.tex \
-			$( [ "$1" != "." ] && echo --metadata=prefix:"$1" ) \
+			$( [ "$1" != "." ] && echo --metadata=prefix:"$1/" ) \
 			$( [ "$1" == "." ] && echo --metadata=prefix:"" ) \
 			$root_dir/config.md && \
 		pandoc \
@@ -32,7 +32,7 @@ do_dir() {
 			--template=$root_dir/meta.html \
 			--standalone \
 			--gladtex \
-			$( [ "$1" != "." ] && echo --metadata=prefix:"$1" ) \
+			$( [ "$1" != "." ] && echo --metadata=prefix:"$1/" ) \
 			$( [ "$1" == "." ] && echo --metadata=prefix:"" ) \
 			--metadata-file=$root_dir/config.md \
 			--output=$build_dir/meta.html \
@@ -44,7 +44,7 @@ do_dir() {
 			--template=$root_dir/header.html \
 			--standalone \
 			--gladtex \
-			$( [ "$1" != "." ] && echo --metadata=prefix:"$1" ) \
+			$( [ "$1" != "." ] && echo --metadata=prefix:"$1/" ) \
 			$( [ "$1" == "." ] && echo --metadata=prefix:"" ) \
 			--metadata-file=$root_dir/config.md \
 			--output=$build_dir/header.html \
@@ -63,7 +63,7 @@ do_dir() {
 				--bibliography=bibliography.bib ) \
 			$( [ "$1" != "." ] && echo \
 				--table-of-contents \
-				--metadata=prefix:"$1" ) \
+				--metadata=prefix:"$1/" ) \
 			$( [ "$1" == "." ] && echo \
 				--metadata=prefix:"" ) \
 			--metadata-file=$root_dir/config.md \
