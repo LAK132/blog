@@ -59,3 +59,54 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.char-quote {
+  margin-bottom: 16px;
+}
+
+.char-quote table {
+  border: 0px !important;
+  width: 100%;
+}
+
+.char-quote table td {
+  border: 0px !important;
+  vertical-align: top;
+}
+
+.char-quote table td:nth-child(1) {
+  width: 10%;
+}
+
+.char-quote table td:nth-child(2) {
+  width: max-content;
+}
+
+.char-message > * {
+  max-width: 100%;
+  width: fit-content;
+
+  margin: 0 !important;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  border: 1px solid;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.char-message > *:last-child {
+  border: 1px solid;
+  border-bottom-left-radius: 5px;
+}
+
+.char-name p {
+  max-width: 100%;
+  width: fit-content;
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

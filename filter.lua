@@ -53,10 +53,15 @@ function Para(content)
 end
 
 local function figure_block(content, label, caption)
+	if caption ~= nil then
+		caption = "<figcaption>" .. caption .. "</figcaption>"
+	else
+		caption = ""
+	end
 	return pandoc.List({
 		[1] = pandoc.RawBlock("html", "<figure id=" .. label .. ">"),
 		[2] = content,
-		[3] = pandoc.RawBlock("html", "<figcaption>" .. caption .. "</figcaption></figure>")
+		[3] = pandoc.RawBlock("html", caption .. "</figure>")
 	})
 end
 

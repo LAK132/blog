@@ -7,6 +7,14 @@
 \lstset{basicstyle=#1\ttfamily,language=#2}
 \lstinputlisting{#3}}
 \newcommand{\ruby}[2]{\begin{math}\implruby{#1}{#2}\end{math}}
+\newcommand{\charq}[3][]{\begin{char-quote}
+\begin{tabular}{ll}
+\includegraphics{#2}
+&
+\begin{char-name}#1\end{char-name}
+\begin{char-message}#3\end{char-message}
+\end{tabular}
+\end{char-quote}}
 
 \def\webroot{$web-root$}
 
