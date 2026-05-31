@@ -61,7 +61,7 @@ local function figure_block(content, label, caption)
 end
 
 function Math(el)
-	for text, annotation in el.text:gmatch("\\ruby{([^}]*)}{([^}]*)}") do
+	for text, annotation in el.text:gmatch("\\implruby{([^}]*)}{([^}]*)}") do
 		return pandoc.RawInline(
 			"html",
 			"<ruby>" .. text .. "<rt>" .. annotation .. "</rt></ruby>")
