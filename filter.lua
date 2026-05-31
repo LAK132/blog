@@ -71,6 +71,11 @@ function Math(el)
 			"html",
 			"<ruby>" .. text .. "<rt>" .. annotation .. "</rt></ruby>")
 	end
+	for abbr, desc in el.text:gmatch("\\implabbr{([^}]*)}{([^}]*)}") do
+		return pandoc.RawInline(
+			"html",
+			"<abbr title=\"" .. desc .. "\">" .. abbr .. "</abbr>")
+	end
 end
 
 function CodeBlock(block, attr)
