@@ -18,7 +18,7 @@ do_dir() {
 	root_dir=$(pwd)
 	build_dir=$root_dir/build/$1
 	out_dir=$root_dir/output/$1
-	( cd $1 && \
+	(	cd $1 && \
 		pandoc \
 			--template=$root_dir/preamble.tex \
 			--output=$build_dir/preamble.tex \
@@ -74,12 +74,9 @@ do_dir() {
 			--include-in-header=$build_dir/meta.html \
 			--include-before-body=$build_dir/header.html \
 			$build_dir/preamble.tex main.tex && \
-		cd $out_dir && \
-		( gladtex \
-			-d math \
-			-o index.html \
-			-u "" \
-			$build_dir/index.htex
+		(	cd $out_dir && \
+			mkdir -p math && \
+			( gladtex -d math -o - -u "" $build_dir/index.htex 1> index.html )
 		)
 	)
 	# gladtex seems to be running into an issue with python

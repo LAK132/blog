@@ -60,6 +60,14 @@ local function figure_block(content, label, caption)
 	})
 end
 
+function Math(el)
+	for text, annotation in el.text:gmatch("\\ruby{([^}]*)}{([^}]*)}") do
+		return pandoc.RawInline(
+			"html",
+			"<ruby>" .. text .. "<rt>" .. annotation .. "</rt></ruby>")
+	end
+end
+
 function CodeBlock(block, attr)
 	if block.attributes.language == "page-meta" then
 		meta_block = assert(load("return " .. block.text))()

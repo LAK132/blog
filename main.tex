@@ -3,7 +3,7 @@
 \newcommand{\post}[1]{
 \def\postpath{posts/#1/}
 \section*{\href{\postpath index.html}{\input{\postpath title}}}
-% technically this should be use \IfFileExists however that doesn't work with
+% technically this should use \IfFileExists however that doesn't work with
 % pandoc for some reason
 \include{\postpath preview}
 \hrule}
