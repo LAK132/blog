@@ -1,15 +1,11 @@
 #! /bin/bash
-rm -rf build
-mkdir -p build
-
-rm -rf output
-mkdir -p output
 
 do_dir() {
 	echo processing $1
 
+	[ "$1" != "." ] && rm -rf build/$1
+	[ "$1" != "." ] && rm -rf output/$1
 	mkdir -p build/$1
-
 	mkdir -p output/$1
 
 	[ -d $1/resources ] && cp -r $1/resources output/$1/
@@ -79,11 +75,32 @@ do_dir() {
 			( gladtex -d math -o - -u "" $build_dir/index.htex 1> index.html )
 		)
 	)
-	# gladtex seems to be running into an issue with python
 }
 
-do_dir .
-for post in posts/*/; do
-	mkdir -p build/$post && do_dir ${post%*/}
+while [ "$1" != "" ]
+do
+	case $1 in
+		clean)
+			rm -rf build
+			rm -rf output
+		;;
+
+		all)
+			do_dir .
+			cp favicon.ico output/favicon.ico
+			for post in posts/*/; do
+				do_dir ${post%*/}
+			done
+		;;
+
+		root)
+			do_dir .
+			cp favicon.ico output/favicon.ico
+		;;
+
+		*)
+			do_dir posts/$1
+		;;
+	esac
+	shift
 done
-cp favicon.ico output/favicon.ico

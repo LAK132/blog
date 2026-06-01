@@ -40,7 +40,7 @@ jobs:
       - name: Install pandoc
         run: sudo apt install -y pandoc graphviz gladtex
       - name: Run build
-        run: ./build.sh
+        run: ./build.sh all
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
