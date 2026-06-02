@@ -57,6 +57,10 @@ div.sourceCode {
   font-size: 0.83em;
 }
 
+.header-section-number {
+  margin-right: 0.5em;
+}
+
 #refs p {
   text-indent: 0 !important;
 }
