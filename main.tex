@@ -3,8 +3,7 @@
 \newcommand{\post}[1]{
 \def\postpath{posts/#1/}
 \section*{\href{\postpath index.html}{\input{\postpath title}}}
-% technically this should use \IfFileExists however that doesn't work with
-% pandoc for some reason
+\include{\postpath subtitle}
 \include{\postpath preview}
 \hrule}
 
@@ -22,6 +21,7 @@
 \end{lstlisting}
 
 \maketitle
+\hrule
 
 \post{dell-dock-conversion}
 
