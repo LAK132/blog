@@ -6,7 +6,8 @@ mkShell {
 		pandoc
 		gladtex
 		graphviz
-		(pkgs.texlive.combine {
+		(aspellWithDicts (d: [d.en d.en-computers]))
+		(texlive.combine {
 			inherit (texlive) scheme-basic
 			amsmath
 			dvisvgm
