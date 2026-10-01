@@ -6,7 +6,7 @@
 
 \begin{document}
 \begin{lstlisting}[language=page-meta]
-{["description"]="STF/APD/DS vs SF vs DC",
+{["description"]="STF/DS/APD vs SF vs DC vs VFC vs anamorphic",
  ["image"]="resources/DSC01570_edited.jpg"}
 \end{lstlisting}
 
@@ -16,7 +16,31 @@
 
 \section{Standard Optics}
 
-Pentax Super-Multi-Coated TAKUMAR 135mm f/2.5 6-element
+\charq[LAK132]{\webroot resources/pfp/lak132.png}{
+What even counts as a portrait lens anyway?
+
+Let's go with ``prime'' and ``close to 135mm''
+(because 135mm is \textit{obviously} the best focal length)
+}
+
+\subsection{Lenses}
+
+A few from my collection:
+
+\begin{itemize}
+	\item Pentax Super-Multi-Coated TAKUMAR 135mm f/2.5 6-element
+	\item Sony A Carl Zeiss Sonnar T* 135mm f/1.8 ZA
+	\item Zeiss Tele-Tessar 135/4 (Zeiss Ikon Contaflex 126)
+\end{itemize}
+
+\charq[LAK132]{\webroot resources/pfp/lak132.png}{
+This page probably wouldn't load if I attempted to list every single standard
+``portrait'' lens ever made lmao
+}
+
+\subsection{Testing}
+
+\subsubsection{Pentax Super-Multi-Coated TAKUMAR 135mm f/2.5 6-element}
 
 \begin{figure}
 	\includegraphics[width=27em]{\postpath resources/DSC00591.JPG}
@@ -24,24 +48,37 @@ Pentax Super-Multi-Coated TAKUMAR 135mm f/2.5 6-element
 	\caption{Sony a7RV, Pentax Super-Multi-Coated TAKUMAR 135mm f/2.5 6-element}
 \end{figure}
 
+\subsubsection{Sony A Carl Zeiss Sonnar T* 135mm f/1.8 ZA}
+
 \section{Apodization}
 
-\subsection{Examples}
+\subsection{Lenses}
 
 Very few lenses with apodization filters have ever been made.
 
 \begin{itemize}
-	\item Minolta A 135mm f/2.8 T4.5 STF
-	\item Sony A 135mm f/2.8 T4.5 STF
-	\item Sony FE 100mm f/2.8 T5.6 STF GM OSS
-	\item LAOWA 105mm f/2 T3.2 STF
-	\item Fujinon Super EBC XF 56mm f/1.2 T1.7 R APD
-	\item Canon RF 85mm f/1.2 T2 L USM DS
+	\item Sony/Minolta A 135mm f/2.8 T4.5 \textbf{\abbr{STF}{Smooth Trans Focus}}
+	\item Sony FE 100mm f/2.8 T5.6 \textbf{\abbr{STF}{Smooth Trans Focus}} GM OSS
+	\item LAOWA 105mm f/2 T3.2 \textbf{\abbr{STF}{Smooth Trans Focus}}
+	\item Fujinon Super EBC XF 56mm f/1.2 T1.7 R \textbf{\abbr{APD}{Apodized}}
+	\item Canon RF 85mm f/1.2 T2 L USM \textbf{\abbr{DS}{Defocus Smoothing}}
 \end{itemize}
+
+Something you may immediately notice about the names of these lenses is that
+they list both an f-number \textit{and} a T-number.
+For example, the Sony FE 100mm f/\textbf{2.8} T\textbf{5.6} STF has an
+f-number of 2.8 and a T-number of 5.6.
+Usually a lens's f-number (focal length divided by diameter of the entrance
+pupil (\( N = f / D \)), often used as a measure of a lens's depth of field)
+and T-number (measure of light transmission) are close enough in value that
+lens manufacturers only report one or the other (f-number for photographic
+lenses, T-number for cine lenses).
+In the case of apodized lenses however, these values can and do differ quite
+significantly.
 
 \subsection{Testing}
 
-Sony A 135mm f/2.8 T4.5 STF
+\subsubsection{Sony A 135mm f/2.8 T4.5 STF}
 
 \begin{figure}
 	\includegraphics[width=27em]{\postpath resources/DSC01464.JPG}
@@ -51,41 +88,141 @@ Sony A 135mm f/2.8 T4.5 STF
 
 \section{Soft Focus}
 
-\subsection{Examples}
+Soft focus lenses typically fall into 1 of 2 categories:
+\begin{itemize}
+	\item Lenses that use optical formulation tricks to prevent sharp focus of the image, and
+	\item Lenses that use aperture tricks to prevent sharp focus of the image.
+\end{itemize}
+Lenses with adjustable soft focus will usually be the former,
+while the latter will generally require the lens to be stopped down quite
+considerably to prevent the soft focus effect.
+
+\subsection{Lenses}
 
 Many many many different soft focus lenses exist. A few notable ones:
 
 \begin{itemize}
-	\item Canon EF 135mm f/2.8 Soft Focus
-	\item Minolta AF 100mm f/2.8 Soft Focus
-	\item Fujinon EBC M42 SF 85mm f/4
+	\item Canon EF 135mm f/2.8 \textbf{Soft Focus} (optical soft focus)
+	\item Minolta AF 100mm f/2.8 \textbf{Soft Focus} (optical soft focus)
+	\item Fujinon EBC M42 \textbf{\abbr{SF}{Soft Focus}} 85mm f/4 (aperture soft focus)
 \end{itemize}
 
 \subsection{Testing}
 
-Minolta AF 100mm f/2.8 Soft Focus
+\subsubsection{Canon EF 135mm f/2.8 Soft Focus}
+
+\subsubsection{Minolta AF 100mm f/2.8 Soft Focus}
+
+\subsubsection{Fujinon EBC M42 SF 85mm f/4}
+
+The trypophobia lens!
 
 \section{Defocus Control}
 
-\subsection{Examples}
+\subsection{Lenses}
 
 The Nikon DC-NIKKORs seems to be the only examples of this type of lens.
 
 \begin{itemize}
-	\item Nikon F AF DC-NIKKOR 135mm f/2
-	\item Nikon F AF DC-NIKKOR 135mm f/2 D
-	\item Nikon F AF DC-NIKKOR 105mm f/2 D
+	\item Nikon F AF \textbf{\abbr{DC}{Defocus Control}}-NIKKOR 135mm f/2
+	\item Nikon F AF \textbf{\abbr{DC}{Defocus Control}}-NIKKOR 135mm f/2 D
+	\item Nikon F AF \textbf{\abbr{DC}{Defocus Control}}-NIKKOR 105mm f/2 D
 \end{itemize}
 
 \subsection{Testing}
 
-Nikon F AF DC-NIKKOR 105mm f/2 D
+\subsubsection{Nikon F AF DC-NIKKOR 105mm f/2 D}
 
 \begin{figure}
 	\includegraphics[width=18em]{\postpath resources/DSC_0338.JPG}
 	\includegraphics[width=18em]{\postpath resources/DSC_0339.JPG}
 	\includegraphics[width=18em]{\postpath resources/DSC_0340.JPG}
-	\caption{Nikon D200, Nikon F AF DC-NIKKOR 105mm f/2 D}
+	\caption{Nikon D200, Nikon F AF DC-NIKKOR 105mm f/2 D (157mm full frame equivalent)}
 \end{figure}
+
+Unfortunately my particular copy of this lens appears to have some issues with
+chromatic aberrations, that other people who have owned this lens before have
+told me were not present on their copies.
+
+\subsubsection{Nikon F AF DC-NIKKOR 135mm f/2 D}
+
+\section{Variable Field Curvature}
+
+\subsection{Lenses}
+
+\begin{itemize}
+	\item Minolta MC \textbf{\abbr{VFC}{Variable Field Curvature}} Rokkor 24mm f/2.8
+	\item Minolta MD \textbf{\abbr{VFC}{Variable Field Curvature}} Rokkor-X 24mm f/2.8
+\end{itemize}
+
+Considering the relatively wide focal length of 24mm of these two lenses,
+they're probably not great for portraiture.
+Nevertheless, their rather unique focus control method felt relevant,
+so I'm including them anyway.
+\charq[LAK132]{\webroot resources/pfp/lak132.png}{
+A 24mm lens is a portrait lens if the portrait calls for a 24mm lens
+}
+
+\subsection{Testing}
+
+\subsubsection{Minolta MD VFC Rokkor-X 24mm f/2.8}
+
+\section{Anamorphic}
+
+\charq[Kicodora]{\webroot resources/pfp/kicodora2.png}{
+Really?
+
+Anamorphic?
+
+The lenses pretty much exclusively used for wide screen movies?
+}
+\charq[LAK132]{\webroot resources/pfp/lak132.png}{
+ANY LENS IS A PORTRAIT LENS IF THE PORTRAIT CALLS FOR IT
+}
+
+In addition to the regular focal length and f-stop/T-stop numbers included
+on other lenses, anamorphics also include a compression factor,
+typically something like 1.33x, 1.6x, 1.8x, etc.
+This number represents how much the image is compressed horizontally,
+and how much the image must be stretched back out to make it look ``normal''
+again.
+This horizontal compression allows a wide screen image to be recorded on an
+otherwise relatively narrow medium, without wasting any of the medium's
+resolution, as you would otherwise have to do if you cropped the image to the
+same aspect ratio.
+
+The major stylistic side effects of this compression process is ``bokeh balls''
+(circles of confusion created by out of focus specular highlights) end up
+as ovals instead of circles, and the compression optics have a tendency to
+create horizontal flares that cover most, if not all,
+of the width of the image.
+
+\subsection{Lenses}
+
+This is another lens category with far too many lenses to mention here,
+so we'll limit the list to just the full frame 135mm lenses that I can easily
+find info about:
+
+\begin{itemize}
+	\item Sirui Venus 135mm T2.9 \textbf{1.8x}
+	\item Sirui IronStar 135mm T1.9 \textbf{1.5x}
+	\item Viltrox EPIC 135mm T2.4 \textbf{1.33x}
+	\item Blazar Mantis 135mm T3.2 \textbf{1.33x}
+	\item Cooke Anamorphic/i FF 135mm T2.3 \textbf{1.8x}
+\end{itemize}
+
+\subsection{Testing}
+
+\subsubsection{Sirui Venus 135mm T2.9 1.8x}
+
+\section{The 135mm shootout}
+
+\begin{itemize}
+	\item Sony A Carl Zeiss Sonnar T* 135mm f/1.8 ZA
+	\item Sony A 135mm f/2.8 T4.5 \textbf{\abbr{STF}{Smooth Trans Focus}}
+	\item Nikon F AF \textbf{\abbr{DC}{Defocus Control}}-NIKKOR 135mm f/2 D
+	\item Canon EF 135mm f/2.8 \textbf{Soft Focus}
+	\item Sirui Venus 135mm T2.9 \textbf{1.8x}
+\end{itemize}
 
 \end{document}
