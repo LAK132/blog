@@ -1,5 +1,7 @@
 #! /bin/sh
 
+config_md=config.md
+
 do_dir() {
 	echo processing $1
 
@@ -20,7 +22,7 @@ do_dir() {
 			--output=$build_dir/preamble.tex \
 			$( [ "$1" != "." ] && echo --metadata=prefix:"$1/" ) \
 			$( [ "$1" == "." ] && echo --metadata=prefix:"" ) \
-			$root_dir/config.md && \
+			$root_dir/$config_md && \
 		pandoc \
 			--from=latex \
 			--to=html \
@@ -30,7 +32,7 @@ do_dir() {
 			--gladtex \
 			$( [ "$1" != "." ] && echo --metadata=prefix:"$1/" ) \
 			$( [ "$1" == "." ] && echo --metadata=prefix:"" ) \
-			--metadata-file=$root_dir/config.md \
+			--metadata-file=$root_dir/$config_md \
 			--output=$build_dir/meta.html \
 			main.tex && \
 		pandoc \
@@ -42,7 +44,7 @@ do_dir() {
 			--gladtex \
 			$( [ "$1" != "." ] && echo --metadata=prefix:"$1/" ) \
 			$( [ "$1" == "." ] && echo --metadata=prefix:"" ) \
-			--metadata-file=$root_dir/config.md \
+			--metadata-file=$root_dir/$config_md \
 			--output=$build_dir/header.html \
 			main.tex && \
 		pandoc \
@@ -62,7 +64,7 @@ do_dir() {
 				--metadata=prefix:"$1/" ) \
 			$( [ "$1" == "." ] && echo \
 				--metadata=prefix:"" ) \
-			--metadata-file=$root_dir/config.md \
+			--metadata-file=$root_dir/$config_md \
 			--lua-filter=$root_dir/filter.lua \
 			--resource-path=.:$build_dir:$out_dir \
 			--output=$build_dir/index.htex \
@@ -76,6 +78,12 @@ do_dir() {
 		)
 	)
 }
+
+if [ "$1" == "local" ]
+then
+	config_md=local-config.md
+	shift
+fi
 
 while [ "$1" != "" ]
 do
