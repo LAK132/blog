@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 
 do_dir() {
 	echo processing $1
